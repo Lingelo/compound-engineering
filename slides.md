@@ -157,9 +157,18 @@ Le CE **inclut** le SDD (Brainstorm + Plan), mais ajoute ce qui manque :
 
 ---
 
+## La Boucle Principale
+
+<p style="text-align:center"><img src="images/boucle.svg" width="900"/></p>
+
+L'ingrédient secret, c'est l'étape **Compound**.
+L'ingénierie traditionnelle et le SDD s'arrêtent à la livraison. Ici, on **capitalise**.
+
+---
+
 ## Le Système de Fichiers Comme Base de Connaissances
 
-Avant de détailler chaque étape, voici **où** cette capitalisation vit :
+Concrètement, voici **où** cette capitalisation vit :
 
 ```
 votre-projet/
@@ -172,15 +181,6 @@ votre-projet/
 ```
 
 **CLAUDE.md est le fichier le plus critique.** L'agent le lit en premier.
-
----
-
-## La Boucle Principale
-
-<p style="text-align:center"><img src="images/boucle.svg" width="900"/></p>
-
-L'ingrédient secret, c'est l'étape **Compound**.
-L'ingénierie traditionnelle et le SDD s'arrêtent à la livraison. Ici, on **capitalise**.
 
 ---
 
@@ -197,6 +197,22 @@ L'ingénierie traditionnelle et le SDD s'arrêtent à la livraison. Ici, on **ca
 > Plan + Review = **80%** du temps. Work + Compound = **20%**.
 
 **Vous êtes un architecte, pas un dactylo.**
+
+---
+
+## Pour Démarrer
+
+```bash
+# Installer le plugin
+claude /plugin marketplace add EveryInc/compound-engineering-plugin
+claude /plugin install compound-engineering
+
+# Passer les permissions pour la vélocité (environnements sûrs uniquement)
+alias cc='claude --dangerously-skip-permissions'
+
+# Lancer votre premier cycle
+cc /ce:plan "Ajouter l'authentification utilisateur avec OAuth2"
+```
 
 ---
 
@@ -332,22 +348,6 @@ Chaque produit est principalement construit et maintenu par **une seule personne
 > « Un seul développeur peut faire le travail de cinq développeurs d'il y a quelques années. »
 
 Le système devient *plus simple à comprendre, modifier et fiabiliser* — l'inverse de la dette technique.
-
----
-
-## Pour Démarrer
-
-```bash
-# Installer le plugin
-claude /plugin marketplace add EveryInc/compound-engineering-plugin
-claude /plugin install compound-engineering
-
-# Passer les permissions pour la vélocité (environnements sûrs uniquement)
-alias cc='claude --dangerously-skip-permissions'
-
-# Lancer votre premier cycle
-cc /ce:plan "Ajouter l'authentification utilisateur avec OAuth2"
-```
 
 ---
 

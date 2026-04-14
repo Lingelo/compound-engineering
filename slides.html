@@ -1053,17 +1053,10 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="le-syst%C3%A8me-de-fichiers-comme-base-de-connaissances">Le Système de Fichiers Comme Base de Connaissances</h2>
-<p>Avant de détailler chaque étape, voici <strong>où</strong> cette capitalisation vit :</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>votre-projet/
-├── CLAUDE.md        # Mémoire institutionnelle
-├── docs/
-│   ├── brainstorms/ # Idéation
-│   ├── solutions/   # Problèmes résolus
-│   └── plans/       # Blueprints
-└── todos/           # Tâches des reviews
-</code></pre>
-<p><strong>CLAUDE.md est le fichier le plus critique.</strong> L'agent le lit en premier.</p>
+<h2 id="la-boucle-principale">La Boucle Principale</h2>
+<p><img src="images/boucle.svg" width="900" /></p>
+<p>L'ingrédient secret, c'est l'étape <strong>Compound</strong>.<br />
+L'ingénierie traditionnelle et le SDD s'arrêtent à la livraison. Ici, on <strong>capitalise</strong>.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -1202,10 +1195,17 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="la-boucle-principale">La Boucle Principale</h2>
-<p><img src="images/boucle.svg" width="900" /></p>
-<p>L'ingrédient secret, c'est l'étape <strong>Compound</strong>.<br />
-L'ingénierie traditionnelle et le SDD s'arrêtent à la livraison. Ici, on <strong>capitalise</strong>.</p>
+<h2 id="le-syst%C3%A8me-de-fichiers-comme-base-de-connaissances">Le Système de Fichiers Comme Base de Connaissances</h2>
+<p>Concrètement, voici <strong>où</strong> cette capitalisation vit :</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>votre-projet/
+├── CLAUDE.md        # Mémoire institutionnelle
+├── docs/
+│   ├── brainstorms/ # Idéation
+│   ├── solutions/   # Problèmes résolus
+│   └── plans/       # Blueprints
+└── todos/           # Tâches des reviews
+</code></pre>
+<p><strong>CLAUDE.md est le fichier le plus critique.</strong> L'agent le lit en premier.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -1523,17 +1523,17 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="%C3%A9tape-0--brainstorm-cebrainstorm">Étape 0 : Brainstorm (<code>/ce:brainstorm</code>)</h2>
-<p>Explore les besoins et les approches <strong>avant</strong> de planifier.</p>
-<ul>
-<li>Clarifie les exigences floues par la recherche et des questions guidées</li>
-<li>Génère des idées divergentes, puis filtre les plus pertinentes</li>
-<li>Optionnel : <code>/ce:ideate</code> génère un maximum d'idées puis un agent &quot;avocat du diable&quot; challenge et élimine les plus faibles</li>
-</ul>
-<p>Sortie : un document d'exploration sauvegardé dans <code>docs/brainstorms/</code>.</p>
-<blockquote>
-<p>Le brainstorm empêche de foncer tête baissée dans une mauvaise direction.</p>
-</blockquote>
+<h2 id="pour-d%C3%A9marrer">Pour Démarrer</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Installer le plugin</span>
+claude /plugin marketplace add EveryInc/compound-engineering-plugin
+claude /plugin install compound-engineering
+
+<span class="hljs-comment"># Passer les permissions pour la vélocité (environnements sûrs uniquement)</span>
+<span class="hljs-built_in">alias</span> cc=<span class="hljs-string">&#x27;claude --dangerously-skip-permissions&#x27;</span>
+
+<span class="hljs-comment"># Lancer votre premier cycle</span>
+cc /ce:plan <span class="hljs-string">&quot;Ajouter l&#x27;authentification utilisateur avec OAuth2&quot;</span>
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -1672,17 +1672,16 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="%C3%A9tape-1--plan-ceplan">Étape 1 : Plan (<code>/ce:plan</code>)</h2>
-<p>Lance <strong>3+ agents de recherche en parallèle</strong> :</p>
+<h2 id="%C3%A9tape-0--brainstorm-cebrainstorm">Étape 0 : Brainstorm (<code>/ce:brainstorm</code>)</h2>
+<p>Explore les besoins et les approches <strong>avant</strong> de planifier.</p>
 <ul>
-<li>Analyste du codebase</li>
-<li>Chercheur de docs framework (100+ frameworks)</li>
-<li>Chercheur de best practices</li>
-<li>Analyseur de specs</li>
+<li>Clarifie les exigences floues par la recherche et des questions guidées</li>
+<li>Génère des idées divergentes, puis filtre les plus pertinentes</li>
+<li>Optionnel : <code>/ce:ideate</code> génère un maximum d'idées puis un agent &quot;avocat du diable&quot; challenge et élimine les plus faibles</li>
 </ul>
-<p>Sortie : un blueprint d'implémentation structuré avec fichiers, approche, cas limites et critères de succès.</p>
+<p>Sortie : un document d'exploration sauvegardé dans <code>docs/brainstorms/</code>.</p>
 <blockquote>
-<p>« La qualité de la planification du développeur détermine directement la qualité du résultat de l'agent. »</p>
+<p>Le brainstorm empêche de foncer tête baissée dans une mauvaise direction.</p>
 </blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
@@ -1822,15 +1821,18 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="%C3%A9tape-2--work-cework">Étape 2 : Work (<code>/ce:work</code>)</h2>
-<p>Quatre phases :</p>
-<ol>
-<li><strong>Quick start</strong> — setup git worktree (branche isolée)</li>
-<li><strong>Exécution</strong> — implémentation pas à pas depuis le plan</li>
-<li><strong>Contrôle qualité</strong> — 5+ reviewers optionnels en cours de route</li>
-<li><strong>Livraison</strong> — création de la PR</li>
-</ol>
-<p>L'agent pose des questions de clarification <em>d'abord</em>, puis construit.</p>
+<h2 id="%C3%A9tape-1--plan-ceplan">Étape 1 : Plan (<code>/ce:plan</code>)</h2>
+<p>Lance <strong>3+ agents de recherche en parallèle</strong> :</p>
+<ul>
+<li>Analyste du codebase</li>
+<li>Chercheur de docs framework (100+ frameworks)</li>
+<li>Chercheur de best practices</li>
+<li>Analyseur de specs</li>
+</ul>
+<p>Sortie : un blueprint d'implémentation structuré avec fichiers, approche, cas limites et critères de succès.</p>
+<blockquote>
+<p>« La qualité de la planification du développeur détermine directement la qualité du résultat de l'agent. »</p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -1969,47 +1971,15 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="%C3%A9tape-3--review-cereview">Étape 3 : Review (<code>/ce:review</code>)</h2>
-<p><strong>14+ agents spécialisés tournent en parallèle :</strong></p>
-<table>
-<thead>
-<tr>
-<th>Agent</th>
-<th>Focus</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>security-sentinel</code></td>
-<td>Audit de vulnérabilités</td>
-</tr>
-<tr>
-<td><code>performance-oracle</code></td>
-<td>Optimisation performance</td>
-</tr>
-<tr>
-<td><code>architecture-strategist</code></td>
-<td>Décisions architecturales</td>
-</tr>
-<tr>
-<td><code>data-integrity-guardian</code></td>
-<td>Migrations base de données</td>
-</tr>
-<tr>
-<td><code>code-simplicity-reviewer</code></td>
-<td>Design minimaliste</td>
-</tr>
-<tr>
-<td><code>pattern-recognition-specialist</code></td>
-<td>Détection d'anti-patterns</td>
-</tr>
-<tr>
-<td><code>deployment-verification-agent</code></td>
-<td>Checklists Go/No-Go</td>
-</tr>
-</tbody>
-</table>
-<p>Résultats triés : <strong>P1</strong> (critique) &gt; <strong>P2</strong> (important) &gt; <strong>P3</strong> (mineur)</p>
+<h2 id="%C3%A9tape-2--work-cework">Étape 2 : Work (<code>/ce:work</code>)</h2>
+<p>Quatre phases :</p>
+<ol>
+<li><strong>Quick start</strong> — setup git worktree (branche isolée)</li>
+<li><strong>Exécution</strong> — implémentation pas à pas depuis le plan</li>
+<li><strong>Contrôle qualité</strong> — 5+ reviewers optionnels en cours de route</li>
+<li><strong>Livraison</strong> — création de la PR</li>
+</ol>
+<p>L'agent pose des questions de clarification <em>d'abord</em>, puis construit.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -2148,13 +2118,47 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="%C3%A9tape-4--compound-cecompound">Étape 4 : Compound (<code>/ce:compound</code>)</h2>
-<p>L'étape qui change tout. <strong>6 sous-agents en parallèle</strong> analysent ce qui vient d'être résolu, extraient les patterns, et documentent le tout dans <code>docs/solutions/</code>.</p>
-<p>Chaque session future peut consulter ces solutions — les bugs corrigent des <em>catégories</em> entières de bugs futurs.</p>
-<p>Et la mémoire s'entretient : <code>/ce:compound-refresh</code> passe en revue les learnings existants et décide de les <strong>garder, mettre à jour, remplacer ou archiver</strong>.</p>
-<blockquote>
-<p>La mémoire n'est pas statique — elle est vivante.</p>
-</blockquote>
+<h2 id="%C3%A9tape-3--review-cereview">Étape 3 : Review (<code>/ce:review</code>)</h2>
+<p><strong>14+ agents spécialisés tournent en parallèle :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>security-sentinel</code></td>
+<td>Audit de vulnérabilités</td>
+</tr>
+<tr>
+<td><code>performance-oracle</code></td>
+<td>Optimisation performance</td>
+</tr>
+<tr>
+<td><code>architecture-strategist</code></td>
+<td>Décisions architecturales</td>
+</tr>
+<tr>
+<td><code>data-integrity-guardian</code></td>
+<td>Migrations base de données</td>
+</tr>
+<tr>
+<td><code>code-simplicity-reviewer</code></td>
+<td>Design minimaliste</td>
+</tr>
+<tr>
+<td><code>pattern-recognition-specialist</code></td>
+<td>Détection d'anti-patterns</td>
+</tr>
+<tr>
+<td><code>deployment-verification-agent</code></td>
+<td>Checklists Go/No-Go</td>
+</tr>
+</tbody>
+</table>
+<p>Résultats triés : <strong>P1</strong> (critique) &gt; <strong>P2</strong> (important) &gt; <strong>P3</strong> (mineur)</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -2293,17 +2297,12 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="l%C3%A9chelle-dadoption">L'Échelle d'Adoption</h2>
-<pre>
-<span>0 Manuel               ██</span>
-<span>1 Copier-coller        █████</span>
-<span>2 Valider chaque ligne ████████</span>
-<span>3 Plan + Review        ████████████████████████ ← CLÉ</span>
-<span>4 Idée → PR            ██████████████████████████████████</span>
-<span>5 Parallèle cloud      ██████████████████████████████████████████</span>
-</pre>
+<h2 id="%C3%A9tape-4--compound-cecompound">Étape 4 : Compound (<code>/ce:compound</code>)</h2>
+<p>L'étape qui change tout. <strong>6 sous-agents en parallèle</strong> analysent ce qui vient d'être résolu, extraient les patterns, et documentent le tout dans <code>docs/solutions/</code>.</p>
+<p>Chaque session future peut consulter ces solutions — les bugs corrigent des <em>catégories</em> entières de bugs futurs.</p>
+<p>Et la mémoire s'entretient : <code>/ce:compound-refresh</code> passe en revue les learnings existants et décide de les <strong>garder, mettre à jour, remplacer ou archiver</strong>.</p>
 <blockquote>
-<p><strong>2 → 3 :</strong> vous arrêtez de micro-manager — vous planifiez, l'agent exécute.</p>
+<p>La mémoire n'est pas statique — elle est vivante.</p>
 </blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
@@ -2443,15 +2442,18 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="changer-de-posture">Changer de posture</h2>
-<p>Le CE demande un changement de mentalité :</p>
-<ul>
-<li><strong>Le code n'est plus l'artefact principal</strong> — plans, reviews et docs comptent autant</li>
-<li><strong>Extraire le goût dans des systèmes</strong> — préférences → règles, agents, skills</li>
-<li><strong>La règle du 50/50</strong> — 50% features, 50% amélioration du système</li>
-<li><strong>La confiance par les filets de sécurité</strong> — tests, reviews auto, monitoring</li>
-<li><strong>Tout doit composer</strong> — code, plans, docs, prompts, processus</li>
-</ul>
+<h2 id="l%C3%A9chelle-dadoption">L'Échelle d'Adoption</h2>
+<pre>
+<span>0 Manuel               ██</span>
+<span>1 Copier-coller        █████</span>
+<span>2 Valider chaque ligne ████████</span>
+<span>3 Plan + Review        ████████████████████████ ← CLÉ</span>
+<span>4 Idée → PR            ██████████████████████████████████</span>
+<span>5 Parallèle cloud      ██████████████████████████████████████████</span>
+</pre>
+<blockquote>
+<p><strong>2 → 3 :</strong> vous arrêtez de micro-manager — vous planifiez, l'agent exécute.</p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -2590,14 +2592,15 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="ce-que-le-ce-ninvente-pas">Ce que le CE n'invente pas</h2>
-<p>Soyons honnêtes. Will Larson le dit bien :</p>
-<blockquote>
-<p>« Le CE consiste en deux patterns très connus (Plan, Work), un modérément connu (Review), et un que beaucoup de praticiens font intuitivement sans l'avoir formalisé (Compound). »</p>
-</blockquote>
-<p>La nouveauté n'est <strong>pas</strong> dans les étapes individuelles.<br />
-Elle est dans la <strong>systématisation</strong> : une boucle automatisée où chaque étape alimente la suivante.</p>
-<p>C'est ça, la formalisation qui manquait — pas une révolution, mais une <strong>discipline</strong>.</p>
+<h2 id="changer-de-posture">Changer de posture</h2>
+<p>Le CE demande un changement de mentalité :</p>
+<ul>
+<li><strong>Le code n'est plus l'artefact principal</strong> — plans, reviews et docs comptent autant</li>
+<li><strong>Extraire le goût dans des systèmes</strong> — préférences → règles, agents, skills</li>
+<li><strong>La règle du 50/50</strong> — 50% features, 50% amélioration du système</li>
+<li><strong>La confiance par les filets de sécurité</strong> — tests, reviews auto, monitoring</li>
+<li><strong>Tout doit composer</strong> — code, plans, docs, prompts, processus</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -2736,17 +2739,14 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="limites-du-ce">Limites du CE</h2>
-<p>Pas de complaisance — le CE a ses angles morts :</p>
-<ul>
-<li><strong>Investissement initial</strong> — il faut &quot;enseigner&quot; au système avant qu'il compose (CLAUDE.md, docs/solutions, conventions). Le premier cycle est le plus lent</li>
-<li><strong>Dépend de votre CI/CD</strong> — Larson : <em>« la qualité dépend plus de votre codebase et de vos tests que de l'agent »</em>. Sans bons tests, le CE amplifie les problèmes</li>
-<li><strong>Bottleneck humain</strong> — le CE ne résout pas la vitesse à laquelle vous décidez <em>quoi</em> construire</li>
-<li><strong>Pas prouvé à grande échelle</strong> — Every fait tourner 5 produits, 1 dev chacun. Quid d'une équipe de 20 ?</li>
-</ul>
+<h2 id="ce-que-le-ce-ninvente-pas">Ce que le CE n'invente pas</h2>
+<p>Soyons honnêtes. Will Larson le dit bien :</p>
 <blockquote>
-<p>Le CE n'est pas magique. C'est un multiplicateur — de vos forces <em>et</em> de vos faiblesses.</p>
+<p>« Le CE consiste en deux patterns très connus (Plan, Work), un modérément connu (Review), et un que beaucoup de praticiens font intuitivement sans l'avoir formalisé (Compound). »</p>
 </blockquote>
+<p>La nouveauté n'est <strong>pas</strong> dans les étapes individuelles.<br />
+Elle est dans la <strong>systématisation</strong> : une boucle automatisée où chaque étape alimente la suivante.</p>
+<p>C'est ça, la formalisation qui manquait — pas une révolution, mais une <strong>discipline</strong>.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -2885,13 +2885,17 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="r%C3%A9sultats-concrets">Résultats Concrets</h2>
-<p>Every Inc. fait tourner <strong>5 produits en production</strong> servant des milliers d'utilisateurs quotidiens.</p>
-<p>Chaque produit est principalement construit et maintenu par <strong>une seule personne</strong>.</p>
+<h2 id="limites-du-ce">Limites du CE</h2>
+<p>Pas de complaisance — le CE a ses angles morts :</p>
+<ul>
+<li><strong>Investissement initial</strong> — il faut &quot;enseigner&quot; au système avant qu'il compose (CLAUDE.md, docs/solutions, conventions). Le premier cycle est le plus lent</li>
+<li><strong>Dépend de votre CI/CD</strong> — Larson : <em>« la qualité dépend plus de votre codebase et de vos tests que de l'agent »</em>. Sans bons tests, le CE amplifie les problèmes</li>
+<li><strong>Bottleneck humain</strong> — le CE ne résout pas la vitesse à laquelle vous décidez <em>quoi</em> construire</li>
+<li><strong>Pas prouvé à grande échelle</strong> — Every fait tourner 5 produits, 1 dev chacun. Quid d'une équipe de 20 ?</li>
+</ul>
 <blockquote>
-<p>« Un seul développeur peut faire le travail de cinq développeurs d'il y a quelques années. »</p>
+<p>Le CE n'est pas magique. C'est un multiplicateur — de vos forces <em>et</em> de vos faiblesses.</p>
 </blockquote>
-<p>Le système devient <em>plus simple à comprendre, modifier et fiabiliser</em> — l'inverse de la dette technique.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -3030,17 +3034,13 @@ a {
   color: #e8e6dc;
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="27">
-<h2 id="pour-d%C3%A9marrer">Pour Démarrer</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Installer le plugin</span>
-claude /plugin marketplace add EveryInc/compound-engineering-plugin
-claude /plugin install compound-engineering
-
-<span class="hljs-comment"># Passer les permissions pour la vélocité (environnements sûrs uniquement)</span>
-<span class="hljs-built_in">alias</span> cc=<span class="hljs-string">&#x27;claude --dangerously-skip-permissions&#x27;</span>
-
-<span class="hljs-comment"># Lancer votre premier cycle</span>
-cc /ce:plan <span class="hljs-string">&quot;Ajouter l&#x27;authentification utilisateur avec OAuth2&quot;</span>
-</code></pre>
+<h2 id="r%C3%A9sultats-concrets">Résultats Concrets</h2>
+<p>Every Inc. fait tourner <strong>5 produits en production</strong> servant des milliers d'utilisateurs quotidiens.</p>
+<p>Chaque produit est principalement construit et maintenu par <strong>une seule personne</strong>.</p>
+<blockquote>
+<p>« Un seul développeur peut faire le travail de cinq développeurs d'il y a quelques années. »</p>
+</blockquote>
+<p>Le système devient <em>plus simple à comprendre, modifier et fiabiliser</em> — l'inverse de la dette technique.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
