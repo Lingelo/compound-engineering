@@ -157,6 +157,24 @@ Le CE **inclut** le SDD (Brainstorm + Plan), mais ajoute ce qui manque :
 
 ---
 
+## Le Système de Fichiers Comme Base de Connaissances
+
+Avant de détailler chaque étape, voici **où** cette capitalisation vit :
+
+```
+votre-projet/
+├── CLAUDE.md        # Mémoire institutionnelle
+├── docs/
+│   ├── brainstorms/ # Idéation
+│   ├── solutions/   # Problèmes résolus
+│   └── plans/       # Blueprints
+└── todos/           # Tâches des reviews
+```
+
+**CLAUDE.md est le fichier le plus critique.** L'agent le lit en premier.
+
+---
+
 ## La Boucle Principale
 
 <p style="text-align:center"><img src="images/boucle.svg" width="900"/></p>
@@ -249,22 +267,6 @@ Chaque session future peut consulter ces solutions — les bugs corrigent des *c
 Et la mémoire s'entretient : `/ce:compound-refresh` passe en revue les learnings existants et décide de les **garder, mettre à jour, remplacer ou archiver**.
 
 > La mémoire n'est pas statique — elle est vivante.
-
----
-
-## Le Système de Fichiers Comme Base de Connaissances
-
-```
-votre-projet/
-├── CLAUDE.md        # Mémoire institutionnelle
-├── docs/
-│   ├── brainstorms/ # Idéation
-│   ├── solutions/   # Problèmes résolus
-│   └── plans/       # Blueprints
-└── todos/           # Tâches des reviews
-```
-
-**CLAUDE.md est le fichier le plus critique.** L'agent le lit en premier.
 
 ---
 
