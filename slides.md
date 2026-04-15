@@ -339,18 +339,6 @@ Pas de complaisance — le CE a ses angles morts :
 
 ---
 
-## Résultats Concrets
-
-Every Inc. fait tourner **5 produits en production** servant des milliers d'utilisateurs quotidiens.
-
-Chaque produit est principalement construit et maintenu par **une seule personne**.
-
-> « Un seul développeur peut faire le travail de cinq développeurs d'il y a quelques années. »
-
-Le système devient *plus simple à comprendre, modifier et fiabiliser* — l'inverse de la dette technique.
-
----
-
 ## La Philosophie en Un Slide
 
 > « Le métier d'un développeur, c'est de livrer de la valeur. Le code n'est qu'un input parmi d'autres — planifier, reviewer et enseigner au système comptent aussi. »
@@ -364,11 +352,11 @@ Vous **construisez un système qui écrit du code et qui s'améliore chaque jour
 
 # One More Thing...
 
-## Et si le vrai risque, c'était vous ?
+## Le piège de la sur-délégation
 
 ---
 
-## Le spectre a un angle mort
+## Un risque commun à tout le spectre
 
 Le Vibe Coding, le SDD et le CE ont un point commun :
 
@@ -376,12 +364,12 @@ Le Vibe Coding, le SDD et le CE ont un point commun :
 
 - Le Vibe Coder ne sait pas ce que l'agent a produit
 - Le SDD Writer sait *ce qu'il a demandé*, mais pas *comment c'est construit*
-- Le Compound Engineer supervise tout — mais a-t-il encore les mains dans le moteur ?
+- Le Compound Engineer supervise tout — mais maîtrise-t-il encore le code et ses subtilités ?
 
-> « Plus on délègue à l'IA, moins on comprend ce qu'elle produit. »
+> « Plus on délègue à l'IA, plus on risque de perdre la maîtrise de ce qu'elle produit. »
 > — Études MIT Media Lab, Microsoft/CMU, METR 2025
 
-La vitesse sans la compréhension, c'est de la **dette cognitive.**
+Trop déléguer sans comprendre, c'est risquer de **perdre la maîtrise de son propre système.**
 
 ---
 
@@ -406,7 +394,7 @@ La vitesse sans la compréhension, c'est de la **dette cognitive.**
 > "L'IA est un junior talentueux mais inexpérimenté
 >  qui a besoin de supervision."
 
-## Signaux d'alerte (dette cognitive)
+## Signaux d'alerte (perte de maîtrise)
 Tu dois m'alerter si tu observes ces patterns :
 - Je demande de "juste corriger" sans comprendre
 - Je copie-colle sans poser de questions
