@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300">
+  <style>
+    text { font-family: 'Inter', 'Helvetica Neue', sans-serif; }
+    .label { fill: #e8e6dc; font-size: 15px; }
+    .label-highlight { fill: #ffffff; font-size: 15px; font-weight: bold; }
+    .annotation { fill: #d97757; font-size: 14px; font-weight: bold; }
+  </style>
+
+  <!-- Level 0 -->
+  <text x="0" y="30" class="label">0  Pas d'IA</text>
+  <rect x="260" y="16" width="40" height="22" rx="3" fill="#666"/>
+
+  <!-- Level 1 -->
+  <text x="0" y="72" class="label">1  Copier-coller ChatGPT</text>
+  <rect x="260" y="58" width="90" height="22" rx="3" fill="#888"/>
+
+  <!-- Level 2 -->
+  <text x="0" y="114" class="label">2  Agent en laisse courte</text>
+  <rect x="260" y="100" width="150" height="22" rx="3" fill="#aaa"/>
+
+  <!-- Level 3 — highlighted -->
+  <text x="0" y="156" class="label-highlight">3  Plan + Review + Docs</text>
+  <rect x="260" y="142" width="360" height="22" rx="3" fill="#d97757"/>
+  <text x="630" y="157" class="annotation">← le saut</text>
+
+  <!-- Level 4 -->
+  <text x="0" y="198" class="label">4  Idée → PR automatique</text>
+  <rect x="260" y="184" width="460" height="22" rx="3" fill="#e8956a"/>
+
+  <!-- Level 5 -->
+  <text x="0" y="240" class="label">5  Agents en parallèle</text>
+  <rect x="260" y="226" width="560" height="22" rx="3" fill="#f0a882"/>
+</svg>

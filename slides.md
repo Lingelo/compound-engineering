@@ -84,212 +84,208 @@ style: |
 
 ---
 
-## Le Vibe Coding — le point de départ
+## Lundi matin, 9h
+
+Vous ouvrez votre terminal. Vous décrivez une feature à l'agent.
+Dix minutes plus tard, le code est là. Ça compile. Les tests passent.
+
+Vous mergez.
+
+**Mardi, un bug en prod.** Vous rouvrez l'agent. Il ne se souvient de rien.
+Vous ré-expliquez le contexte. Il propose un fix. Vous mergez.
+
+**Mercredi, le même bug — ailleurs.** L'agent ne fait pas le lien.
+Et vous non plus, parce que ce n'est plus votre code.
+
+---
+
+## Le problème n'est pas l'IA
 
 > « Tu décris ce que tu veux, l'IA produit du code. Tu "vibes" avec le résultat. »
 > — Andrej Karpathy, 2025
 
-Ça marche pour un script, un POC, un side project.
-Mais en production : pas d'architecture, zéro capitalisation, chaque session repart de zéro.
+Scripts, POCs, side projects — c'est redoutablement efficace.
+
+Mais en production, trois choses manquent :
+- **Pas de mémoire** — chaque session repart de zéro
+- **Pas de review** — le code passe, sans regard critique
+- **Pas de capitalisation** — les erreurs ne servent qu'une fois
 
 > Le Vibe Coding, c'est du prototypage qui s'ignore.
 
 ---
 
-## Vers l'ingénierie agentique
+## L'industrie cherche la sortie
 
-En 2026, l'industrie cherche à **structurer** le travail avec les agents IA.
-Deux approches émergent pour dépasser le Vibe Coding :
+En 2026, deux approches émergent pour structurer le travail avec les agents :
 
 <p style="text-align:center"><img src="images/spectre.svg" width="900"/></p>
 
-Le **SDD** structure le briefing (specs, critères, edge cases) — mais la spec est jetable, pas de capitalisation.
-Le **CE** inclut le briefing, et ajoute review systématique + **capitalisation**.
+Le **Spec-Driven Development** structure le briefing — specs, critères, edge cases.
+Mais la spec est jetable. La session d'après, on recommence.
+
+Le **Compound Engineering** fait la même chose, puis ajoute deux étapes :
+**review systématique** et **capitalisation**.
 
 ---
 
-## La Boucle Principale
+## L'idée centrale
+
+Et si chaque problème résolu rendait le suivant plus facile ?
 
 <p style="text-align:center"><img src="images/boucle.svg" width="900"/></p>
 
-L'ingrédient secret, c'est l'étape **Compound**.
-L'ingénierie traditionnelle et le SDD s'arrêtent à la livraison. Ici, on **capitalise**.
+La plupart des workflows s'arrêtent à la livraison.
+Ici, après chaque cycle, on **extrait ce qu'on a appris** et on le réinjecte dans le projet.
+
+L'agent de demain commence là où celui d'aujourd'hui a fini.
 
 ---
 
-## Le Système de Fichiers Comme Base de Connaissances
-
-Concrètement, voici **où** cette capitalisation vit :
+## Concrètement : la mémoire vit dans le repo
 
 ```
 votre-projet/
-├── CLAUDE.md        # Mémoire institutionnelle
+├── CLAUDE.md        # Ce que l'agent doit savoir
 ├── docs/
-│   ├── brainstorms/ # Idéation
-│   ├── solutions/   # Problèmes résolus
-│   └── plans/       # Blueprints
-└── todos/           # Tâches des reviews
+│   ├── brainstorms/ # Idéation structurée
+│   ├── solutions/   # Patterns extraits des bugs résolus
+│   └── plans/       # Blueprints d'implémentation
+└── todos/           # Tâches issues des reviews
 ```
 
-**CLAUDE.md est le fichier le plus critique.** L'agent le lit en premier.
+Pas de base de données externe. Pas de SaaS. **Des fichiers markdown dans votre repo.**
+
+L'agent les lit au démarrage. Vos collègues aussi.
 
 ---
 
-## Étape 0 : Brainstorm (`/ce:brainstorm`)
+## Le cycle en action
 
-Explore les besoins et les approches **avant** de planifier.
+Reprenons le bug de mardi. Avec le CE, ça donne :
 
-- Clarifie les exigences floues par la recherche et des questions guidées
-- Génère des idées divergentes, puis filtre les plus pertinentes
-- Optionnel : `/ce:ideate` génère un maximum d'idées puis un agent "avocat du diable" challenge et élimine les plus faibles
+**1. Plan** — l'agent analyse le codebase, la doc framework, les best practices.
+Il produit un blueprint *avant* d'écrire une ligne de code.
 
-Sortie : un document d'exploration sauvegardé dans `docs/brainstorms/`.
+**2. Work** — il implémente depuis le plan, sur une branche isolée.
 
-> Le brainstorm empêche de foncer tête baissée dans une mauvaise direction.
+**3. Review** — des agents spécialisés (sécu, perfs, archi, simplification)
+passent le code au peigne fin. Indépendamment. En parallèle.
 
----
+**4. Compound** — le fix est analysé : quel pattern a causé le bug ?
+La réponse est documentée dans `docs/solutions/`.
 
-## Étape 1 : Plan (`/ce:plan`)
-
-Lance **3+ agents de recherche en parallèle** :
-- Analyste du codebase
-- Chercheur de docs framework (100+ frameworks)
-- Chercheur de best practices
-- Analyseur de specs
-
-Sortie : un blueprint d'implémentation structuré avec fichiers, approche, cas limites et critères de succès.
-
-> « La qualité de la planification détermine directement la qualité du résultat de l'agent. »
+**Mercredi**, quand un bug similaire apparaît, l'agent *le sait déjà*.
 
 ---
 
-## Étape 2 : Work (`/ce:work`)
+## Ce qui change au quotidien
 
-Quatre phases :
-1. **Quick start** — setup git worktree (branche isolée)
-2. **Exécution** — implémentation pas à pas depuis le plan
-3. **Contrôle qualité** — 5+ reviewers optionnels en cours de route
-4. **Livraison** — création de la PR
+Avant : vous écrivez du code et parfois de la doc.
+Après : **vous pilotez un système qui apprend.**
 
-L'agent pose des questions de clarification *d'abord*, puis construit.
-
----
-
-## Étape 3 : Review (`/ce:review`)
-
-**14+ agents spécialisés tournent en parallèle :**
-
-| Agent | Focus |
+| Avant | Après |
 |-------|-------|
-| `security-sentinel` | Audit de vulnérabilités |
-| `performance-oracle` | Optimisation performance |
-| `architecture-strategist` | Décisions architecturales |
-| `data-integrity-guardian` | Migrations base de données |
-| `code-simplicity-reviewer` | Design minimaliste |
-| `pattern-recognition-specialist` | Détection d'anti-patterns |
-| `deployment-verification-agent` | Checklists Go/No-Go |
+| Décrire → Coder → Merger | Planifier → Exécuter → Reviewer → Capitaliser |
+| L'agent est un outil | L'agent est un junior supervisé |
+| La doc est une corvée | La doc est le carburant du système |
+| Chaque session repart de zéro | Chaque session démarre avec le contexte |
 
-Résultats triés : **P1** (critique) > **P2** (important) > **P3** (mineur)
+> Le code n'est plus l'artefact principal. Le *système* l'est.
 
 ---
 
-## Étape 4 : Compound (`/ce:compound`)
+## Où en êtes-vous ?
 
-L'étape qui change tout. **6 sous-agents en parallèle** analysent ce qui vient d'être résolu, extraient les patterns, et documentent le tout dans `docs/solutions/`.
+<p style="text-align:center"><img src="images/echelle.svg" width="850"/></p>
 
-Chaque session future peut consulter ces solutions — les bugs corrigent des *catégories* entières de bugs futurs.
-
-Et la mémoire s'entretient : `/ce:compound-refresh` passe en revue les learnings existants et décide de les **garder, mettre à jour, remplacer ou archiver**.
-
-> La mémoire n'est pas statique — elle est vivante.
+Le passage de **2 à 3** est le moment clé.
+Vous arrêtez de relire chaque ligne. Vous commencez à **diriger**.
 
 ---
 
-## L'Échelle d'Adoption
+## Soyons honnêtes
 
-<pre style="background:#1e1e1c; padding:1em 1.5em; border:1px solid #333; font-size:0.8em; line-height:1.8; font-family:'Courier New',monospace; width:100%; box-sizing:border-box">
-<span style="color:#b0aea5">0 Manuel               ██</span>
-<span style="color:#b0aea5">1 Copier-coller        █████</span>
-<span style="color:#b0aea5">2 Valider chaque ligne ████████</span>
-<span style="color:#d97757; font-weight:bold">3 Plan + Review        ████████████████████████ ← CLÉ</span>
-<span style="color:#e8956a">4 Idée → PR            ██████████████████████████████████</span>
-<span style="color:#e8956a">5 Parallèle cloud      ██████████████████████████████████████████</span>
-</pre>
+Le CE n'est pas magique. Voici ce que personne ne met dans les slides de démo :
 
-> **2 → 3 :** vous arrêtez de micro-manager — vous planifiez, l'agent exécute.
+- **Rien de révolutionnaire** — Will Larson : *« des pratiques connues, converties en quelque chose de concret et largement automatique »*. La nouveauté est dans la discipline, pas dans les idées
+- **Le premier cycle est le plus lent** — il faut "enseigner" au système avant qu'il compose
+- **Vos tests sont le plafond** — Will Larson : *« la qualité dépend plus de votre codebase et vos tests que de l'agent lui-même »*
+- **Pas prouvé à grande échelle** — Every fait tourner 5 produits, 1 dev par produit. Quid d'une équipe de 20 ?
+
+> C'est un multiplicateur — de vos forces *et* de vos faiblesses.
 
 ---
 
-## Changer de posture
+## Le piège que personne ne voit
 
-Le CE demande un changement de mentalité :
+Vibe Coding, SDD, CE — les trois externalisent le travail vers l'agent.
+Plus l'outil est bon, plus le piège est confortable :
+vous livrez plus vite, mais vous comprenez moins.
 
-- **Le code n'est plus l'artefact principal** — plans, reviews et docs comptent autant
-- **Extraire le goût dans des systèmes** — préférences → règles, agents, skills
-- **La règle du 50/50** — 50% features, 50% amélioration du système
-- **La confiance par les filets de sécurité** — tests, reviews auto, monitoring
-- **Tout doit composer** — code, plans, docs, prompts, processus
+Les études (MIT, Microsoft, METR 2025) convergent :
+**les développeurs qui délèguent sans superviser perdent progressivement leur capacité à résoudre seuls.**
 
----
-
-## Limites du CE
-
-Pas de complaisance — le CE a ses angles morts :
-
-- **Rien de révolutionnaire** — Larson : *« des patterns connus, systématisés en boucle »*. La nouveauté est dans la discipline, pas les étapes
-- **Investissement initial** — il faut "enseigner" au système avant qu'il compose. Le premier cycle est le plus lent
-- **Dépend de votre CI/CD** — *« la qualité dépend plus de vos tests que de l'agent »*. Sans bons tests, le CE amplifie les problèmes
-- **Pas prouvé à grande échelle** — Every fait tourner 5 produits, 1 dev chacun. Quid d'une équipe de 20 ?
-
-> Le CE n'est pas magique. C'est un multiplicateur — de vos forces *et* de vos faiblesses.
+> Micode en parle très bien : *« Comment ChatGPT détruit votre cerveau »*
 
 ---
 
-## Le piège de trop déléguer
+## Garder la main
 
-Vibe Coding, SDD et CE ont un point commun : **les trois externalisent le travail vers l'agent.**
-Le risque : perdre la maîtrise du code et de ses subtilités.
+> « Il y a une façon d'utiliser l'IA pour nous rendre idiot, et une façon pour nous ouvrir l'esprit. »
+> — r/ChatGPT_FR
 
-**Trois pratiques pour lundi matin :**
+Deux réflexes pour rester du bon côté :
 
-1. **Sessions sans IA** — le muscle qui ne travaille pas s'atrophie
-2. **Red-teaming systématique** — ne mergez jamais du code que vous ne comprenez pas à 100%
-3. **Expliquer avant de merger** — si vous ne pouvez pas expliquer *pourquoi* le code fonctionne, vous n'êtes pas prêt
+- **Coder sans IA régulièrement** — katas, pet projects, debugging manuel. Le muscle qui ne travaille pas s'atrophie
+- **Configurer votre `CLAUDE.md` en mode socratique** — l'agent donne des indices, pas des réponses. Vous restez aux commandes *même quand vous utilisez l'IA*
+
+---
+
+## Et si l'agent vous rendait *meilleur* ?
+
+Le même outil peut atrophier ou muscler — ça dépend de comment on l'utilise.
+
+**Le mode tuteur** (`/coding-tutor`) inverse la relation :
+- L'agent analyse *votre* codebase et crée des exercices personnalisés
+- Il enseigne par la méthode socratique — indices et pistes, pas de réponse directe
+- Répétition espacée et quizz pour ancrer les concepts
+
+Au lieu de déléguer ce que vous ne comprenez pas,
+vous **apprenez** ce que vous ne comprenez pas.
 
 > L'IA accélère. Votre compréhension décide de la direction.
+> — Plugin CE : github.com/EveryInc/compound-engineering-plugin
 
 ---
 
-## Pour Démarrer
+## Pour essayer
 
 ```bash
-# Installer le plugin
+# Compound Engineering
 claude /plugin marketplace add EveryInc/compound-engineering-plugin
 claude /plugin install compound-engineering
+claude /ce:plan "Ajouter l'authentification OAuth2"
 
-# Passer les permissions pour la vélocité (environnements sûrs uniquement)
-alias cc='claude --dangerously-skip-permissions'
-
-# Lancer votre premier cycle
-cc /ce:plan "Ajouter l'authentification utilisateur avec OAuth2"
+# AI Tutor — apprendre depuis votre code
+claude /coding-tutor
 ```
 
 ---
 
-# Et vous,
+# Demain matin,
 
-# vous êtes à quel stade du spectre ?
+# vous changez quoi ?
 
 ---
 
-## Merci — Ressources
+## Ressources
 
 - **Guide définitif :** every.to/source-code/compound-engineering-the-definitive-guide
 - **Guide pratique :** every.to/guides/compound-engineering
 - **Analyse Larson :** lethain.com/everyinc-compound-engineering
 - **Plugin :** github.com/EveryInc/compound-engineering-plugin
-- **SDD — SpecKit :** github.com/github/spec-kit
-- **SDD — OpenSpec :** github.com/Fission-AI/OpenSpec
-- **SDD — Analyse Fowler :** martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html
+- **SDD :** martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html
+- **Atrophie cognitive :** Micode — *Comment ChatGPT détruit votre cerveau* (YouTube)
 
-**Brainstorm. Plan. Work. Review. Compound. Repeat.**
+**Merci.**
