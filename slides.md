@@ -219,42 +219,41 @@ Le CE n'est pas magique. Voici ce que personne ne met dans les slides de démo :
 
 ## Le piège que personne ne voit
 
-Vibe Coding, SDD, CE — les trois externalisent le travail vers l'agent.
-Plus l'outil est bon, plus le piège est confortable :
+L'**effet GPS** : les chauffeurs de taxi londoniens qui mémorisent les rues développent un hippocampe plus gros. Ceux qui utilisent le GPS le voient s'atrophier.
+
+Même mécanisme avec l'IA. Plus l'outil est bon, plus le piège est confortable :
 vous livrez plus vite, mais vous comprenez moins.
 
-Les études (MIT, Microsoft, METR 2025) convergent :
-**les développeurs qui délèguent sans superviser perdent progressivement leur capacité à résoudre seuls.**
+> Micode — *« Comment ChatGPT détruit votre cerveau »*
 
-> Micode en parle très bien : *« Comment ChatGPT détruit votre cerveau »*
+---
+
+## L'étude qui change tout
+
+Le MIT teste trois groupes d'étudiants face à des problèmes complexes :
+
+| Groupe | Méthode | Résultat immédiat | Sans IA ensuite |
+|--------|---------|-------------------|-----------------|
+| **A** | Sans aide | Moyen | Stable |
+| **B** | IA libre | **Le meilleur** | **S'effondre** |
+| **C** | IA tuteur | Bon | **Progresse** |
+
+Le groupe B accumule une **dette cognitive** : des résultats sans compétences.
+Le groupe C apprend *avec* l'IA — et devient autonome.
 
 ---
 
 ## Garder la main
 
-> « Il y a une façon d'utiliser l'IA pour nous rendre idiot, et une façon pour nous ouvrir l'esprit. »
-> — r/ChatGPT_FR
-
-Deux réflexes pour rester du bon côté :
+Deux réflexes pour rester dans le groupe C :
 
 - **Coder sans IA régulièrement** — katas, pet projects, debugging manuel. Le muscle qui ne travaille pas s'atrophie
 - **Configurer votre `CLAUDE.md` en mode socratique** — l'agent donne des indices, pas des réponses. Vous restez aux commandes *même quand vous utilisez l'IA*
 
----
+**Le mode tuteur** (`/coding-tutor`) pousse cette logique plus loin :
+l'agent analyse *votre* codebase et crée des exercices personnalisés.
 
-## Et si l'agent vous rendait *meilleur* ?
-
-Le même outil peut atrophier ou muscler — ça dépend de comment on l'utilise.
-
-**Le mode tuteur** (`/coding-tutor`) inverse la relation :
-- L'agent analyse *votre* codebase et crée des exercices personnalisés
-- Il enseigne par la méthode socratique — indices et pistes, pas de réponse directe
-- Répétition espacée et quizz pour ancrer les concepts
-
-Au lieu de déléguer ce que vous ne comprenez pas,
-vous **apprenez** ce que vous ne comprenez pas.
-
-> L'IA accélère. Votre compréhension décide de la direction.
+> Au lieu de déléguer ce que vous ne comprenez pas, vous l'**apprenez**.
 > — Plugin CE : github.com/EveryInc/compound-engineering-plugin
 
 ---
