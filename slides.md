@@ -164,16 +164,13 @@ L'agent les lit au démarrage. Vos collègues aussi.
 
 Reprenons le bug de mardi. Avec le CE, ça donne :
 
-**1. Plan** — l'agent analyse le codebase, la doc framework, les best practices.
-Il produit un blueprint *avant* d'écrire une ligne de code.
+**1. Plan** (*vous 20% · agent 80%*) — l'agent analyse le codebase, la doc framework, les best practices. Il produit un blueprint *avant* d'écrire une ligne de code.
 
-**2. Work** — il implémente depuis le plan, sur une branche isolée.
+**2. Work** (*vous 10% · agent 90%*) — il implémente depuis le plan, sur une branche isolée.
 
-**3. Review** — des agents spécialisés (sécu, perfs, archi, simplification)
-passent le code au peigne fin. Indépendamment. En parallèle.
+**3. Review** (*vous 10% · agent 90%*) — des agents spécialisés (sécu, perfs, archi, simplification) passent le code au peigne fin. Indépendamment. En parallèle.
 
-**4. Compound** — le fix est analysé : quel pattern a causé le bug ?
-La réponse est documentée dans `docs/solutions/`.
+**4. Compound** (*vous 5% · agent 95%*) — le fix est analysé : quel pattern a causé le bug ? La réponse est documentée dans `docs/solutions/`.
 
 **Mercredi**, quand un bug similaire apparaît, l'agent *le sait déjà*.
 
@@ -192,6 +189,20 @@ Après : **vous pilotez un système qui apprend.**
 | Chaque session repart de zéro | Chaque session démarre avec le contexte |
 
 > Le code n'est plus l'artefact principal. Le *système* l'est.
+
+---
+
+## Le Split 80/20
+
+Vous l'avez vu étape par étape — en moyenne :
+
+L'agent prend en charge **~80% de l'exécution** :
+recherche, implémentation, reviews automatisées, documentation.
+
+Le développeur garde les **~20% critiques** :
+direction, décisions d'architecture, validation finale.
+
+> Vous êtes un architecte, pas un dactylo.
 
 ---
 
@@ -219,9 +230,11 @@ Le CE n'est pas magique. Voici ce que personne ne met dans les slides de démo :
 
 ## Le piège que personne ne voit
 
+L'agent fait 80% du code. Mais **maîtrisez-vous encore les 80% que vous n'avez pas écrits ?**
+
 L'**effet GPS** : les chauffeurs de taxi londoniens qui mémorisent les rues développent un hippocampe plus gros. Ceux qui utilisent le GPS le voient s'atrophier.
 
-Même mécanisme avec l'IA. Plus l'outil est bon, plus le piège est confortable :
+Même mécanisme avec le code. Plus l'outil est bon, plus le piège est confortable :
 vous livrez plus vite, mais vous comprenez moins.
 
 > Micode — *« Comment ChatGPT détruit votre cerveau »*
