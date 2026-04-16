@@ -196,13 +196,12 @@ Après : **vous pilotez un système qui apprend.**
 
 ## Le Split 80/20
 
-Vous l'avez vu étape par étape — en moyenne :
+Every Inc le résume ainsi :
 
-L'agent prend en charge **~80% de l'exécution** :
-recherche, implémentation, reviews automatisées, documentation.
+**80%** de votre temps sur **Plan + Review** — réfléchir, vérifier, décider.
+**20%** sur **Work + Compound** — l'agent exécute, le système capitalise.
 
-Le développeur garde les **~20% critiques** :
-direction, décisions d'architecture, validation finale.
+Vous ne codez presque plus. Vous **pilotez et contrôlez**.
 
 > Vous êtes un architecte, pas un dactylo.
 
@@ -232,7 +231,8 @@ Le CE n'est pas magique. Voici ce que personne ne met dans les slides de démo :
 
 ## Le piège que personne ne voit
 
-L'agent fait 80% du code. Mais **maîtrisez-vous encore les 80% que vous n'avez pas écrits ?**
+80% du temps à piloter, 20% à exécuter. Ça sonne bien.
+Mais si vous ne codez presque plus... **comprenez-vous encore ce que l'agent produit ?**
 
 L'**effet GPS** : les chauffeurs de taxi londoniens qui mémorisent les rues développent un hippocampe plus gros. Ceux qui utilisent le GPS le voient s'atrophier.
 
