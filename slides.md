@@ -164,13 +164,15 @@ L'agent les lit au démarrage. Vos collègues aussi.
 
 Reprenons le bug de mardi. Avec le CE, ça donne :
 
-**1. Plan** (*vous 20% · agent 80%*) — l'agent analyse le codebase, la doc framework, les best practices. Il produit un blueprint *avant* d'écrire une ligne de code.
+**1. Brainstorm** (*vous 50% · agent 50%*) — on clarifie le problème. L'agent explore les causes possibles, vous arbitrez.
 
-**2. Work** (*vous 10% · agent 90%*) — il implémente depuis le plan, sur une branche isolée.
+**2. Plan** (*vous 20% · agent 80%*) — l'agent analyse le codebase, la doc framework, les best practices. Il produit un blueprint *avant* d'écrire une ligne de code.
 
-**3. Review** (*vous 10% · agent 90%*) — des agents spécialisés (sécu, perfs, archi, simplification) passent le code au peigne fin. Indépendamment. En parallèle.
+**3. Work** (*vous 10% · agent 90%*) — il implémente depuis le plan, sur une branche isolée.
 
-**4. Compound** (*vous 5% · agent 95%*) — le fix est analysé : quel pattern a causé le bug ? La réponse est documentée dans `docs/solutions/`.
+**4. Review** (*vous 10% · agent 90%*) — des agents spécialisés (sécu, perfs, archi, simplification) passent le code au peigne fin. Indépendamment. En parallèle.
+
+**5. Compound** (*vous 5% · agent 95%*) — le fix est analysé : quel pattern a causé le bug ? La réponse est documentée dans `docs/solutions/`.
 
 **Mercredi**, quand un bug similaire apparaît, l'agent *le sait déjà*.
 
