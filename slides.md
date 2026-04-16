@@ -164,13 +164,17 @@ L'agent les lit au démarrage. Vos collègues aussi.
 
 Reprenons le bug de mardi. Avec le CE, ça donne :
 
-**1. Brainstorm** (*vous pilotez · agent explore*) — on clarifie le problème. L'agent explore les causes possibles, vous arbitrez.
+**1. Brainstorm** (*vous pilotez · agent explore*) — on clarifie le problème, l'agent explore les causes possibles.
 
-**2. Plan** (*vous validez · agent recherche*) — l'agent analyse le codebase, la doc framework, les best practices. Il produit un blueprint *avant* d'écrire une ligne de code.
+**2. Plan** (*vous validez · agent recherche*) — l'agent analyse le codebase, la doc framework, les best practices. Blueprint *avant* d'écrire une ligne de code.
 
 **3. Work** (*vous clarifiez · agent code*) — il implémente depuis le plan, sur une branche isolée.
 
-**4. Review** (*vous décidez · agent analyse*) — des agents spécialisés (sécu, perfs, archi, simplification) passent le code au peigne fin. Indépendamment. En parallèle.
+---
+
+## Le cycle en action (suite)
+
+**4. Review** (*vous décidez · agent analyse*) — des agents spécialisés (sécu, perfs, archi, simplification) passent le code au peigne fin. En parallèle.
 
 **5. Compound** (*vous supervisez · agent documente*) — le fix est analysé : quel pattern a causé le bug ? La réponse est documentée dans `docs/solutions/`.
 
