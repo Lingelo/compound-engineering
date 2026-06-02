@@ -158,24 +158,43 @@ Pas de base de données externe. Pas de SaaS. **Des fichiers markdown dans votre
 
 L'agent les lit au démarrage. Vos collègues aussi.
 
+> Pour ce qui n'est pas encore en fichier ? `/ce-sessions` le rejoue.
+
 ---
 
 ## Le cycle en action
 
 Reprenons le bug de mardi. Avec le CE, ça donne :
 
-**1. Plan** — l'agent analyse le codebase, la doc framework, les best practices.
-Il produit un blueprint *avant* d'écrire une ligne de code.
+**1. Plan** — analyse codebase + doc framework + best practices. Blueprint *avant* le code.
 
-**2. Work** — il implémente depuis le plan, sur une branche isolée.
+**2. Work** — implémente depuis le plan, sur une branche isolée.
 
-**3. Review** — des agents spécialisés (sécu, perfs, archi, simplification)
-passent le code au peigne fin. Indépendamment. En parallèle.
+**3. Review** — agents spécialisés (sécu, perfs, archi, simplification). En parallèle.
 
-**4. Compound** — le fix est analysé : quel pattern a causé le bug ?
-La réponse est documentée dans `docs/solutions/`.
+**4. Polish** — *vous* reprenez la main. Ce que l'IA ne peut pas trancher.
+
+**5. Compound** — quel pattern a causé le bug ? Documenté dans `docs/solutions/`.
 
 **Mercredi**, quand un bug similaire apparaît, l'agent *le sait déjà*.
+
+---
+
+## D'un POC à un framework
+
+Il y a un an, c'était quatre commandes bricolées dans un dossier.
+
+| | |
+|---|---|
+| **37 skills** | du brainstorm au merge |
+| **51 agents** | spécialisés et composables |
+| **v3.9.4** | 163 releases en 18 mois |
+| **19k stars** | open source, communauté active |
+
+Pas un POC. Un framework, maintenu, qui s'élargit chaque semaine.
+
+> La question n'est plus *« est-ce que ça vaut le coup ? »*
+> mais *« qu'est-ce que j'attends pour m'y mettre ? »*
 
 ---
 
@@ -204,20 +223,25 @@ Vous arrêtez de relire chaque ligne. Vous commencez à **diriger**.
 
 ---
 
-## Soyons honnêtes
+## Le facteur limitant, c'est vous
 
-Le CE n'est pas magique. Voici ce que personne ne met dans les slides de démo :
+Le CE n'est pas magique. Trois limites — toujours la même cause :
 
-- **Rien de révolutionnaire** — Will Larson : *« des pratiques connues, converties en quelque chose de concret et largement automatique »*. La nouveauté est dans la discipline, pas dans les idées
-- **Le premier cycle est le plus lent** — il faut "enseigner" au système avant qu'il compose
-- **Vos tests sont le plafond** — Will Larson : *« la qualité dépend plus de votre codebase et vos tests que de l'agent lui-même »*
-- **Pas prouvé à grande échelle** — Every fait tourner 5 produits, 1 dev par produit. Quid d'une équipe de 20 ?
+- **Rien de révolutionnaire** — de la discipline outillée, pas une formule.
+  À *vous* de la tenir.
+- **L'IA ne teste pas mieux que vous** — l'agent valide en lançant votre suite
+  automatisée. Tests faibles = qualité faible.
+- **Le compound prend du temps** — 3 à 6 mois avant les bénéfices cumulatifs.
+  Beaucoup d'équipes lâchent avant d'y être.
 
-> C'est un multiplicateur — de vos forces *et* de vos faiblesses.
+> Le CE est un multiplicateur — de vos forces *et* de vos faiblesses.
+> Si vous êtes le levier, prenez soin du levier.
 
 ---
 
 ## Le piège que personne ne voit
+
+Si vous êtes le levier, le piège c'est qu'il s'use sans qu'on s'en rende compte.
 
 L'**effet GPS** : les chauffeurs de taxi londoniens qui mémorisent les rues développent un hippocampe plus gros. Ceux qui utilisent le GPS le voient s'atrophier.
 
@@ -264,7 +288,8 @@ l'agent analyse *votre* codebase et crée des exercices personnalisés.
 # Compound Engineering
 claude /plugin marketplace add EveryInc/compound-engineering-plugin
 claude /plugin install compound-engineering
-claude /ce:plan "Ajouter l'authentification OAuth2"
+claude /ce-plan "Ajouter l'authentification OAuth2"
+claude /ce-sessions     # retrouver une investigation passée
 
 # AI Tutor — apprendre depuis votre code
 claude /coding-tutor
@@ -283,7 +308,7 @@ claude /coding-tutor
 - **Guide définitif :** every.to/source-code/compound-engineering-the-definitive-guide
 - **Guide pratique :** every.to/guides/compound-engineering
 - **Analyse Larson :** lethain.com/everyinc-compound-engineering
-- **Plugin :** github.com/EveryInc/compound-engineering-plugin
+- **Plugin (v3.9.4) :** github.com/EveryInc/compound-engineering-plugin *(+ /releases)*
 - **SDD :** martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html
 - **Atrophie cognitive :** Micode — *Comment ChatGPT détruit votre cerveau* (YouTube)
 
