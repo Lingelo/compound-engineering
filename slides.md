@@ -184,7 +184,7 @@ Reprenons le bug de mardi. Avec le CE, ça donne :
 
 `/ce-debug` — l'agent ne lit pas juste les logs. Il joue le testeur.
 
-Via le **MCP Chrome DevTools**, il prend le contrôle du navigateur :
+Via le **Chrome DevTools MCP**, il prend le contrôle du navigateur :
 clics, formulaires, console, réseau — tout ce qu'un humain ferait pour reproduire le bug.
 
 **1. Naviguer** — l'agent rejoue le scénario dans le vrai navigateur
