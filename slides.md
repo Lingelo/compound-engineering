@@ -182,22 +182,18 @@ Reprenons le bug de mardi. Avec le CE, ça donne :
 
 ## Le debug, version CE
 
-`/ce-debug` — l'agent ne lit pas juste les logs. Il joue le testeur.
+Via le **Chrome DevTools MCP**, `/ce-debug` prend le contrôle du navigateur —
+l'agent rejoue le scénario et trouve le bug lui-même.
 
-Via le **Chrome DevTools MCP**, il prend le contrôle du navigateur :
-clics, formulaires, console, réseau — tout ce qu'un humain ferait pour reproduire le bug.
+**1. Observer** — clics, console, réseau : comportement réel, pas une description
 
-**1. Naviguer** — l'agent rejoue le scénario dans le vrai navigateur
+**2. Diagnostiquer** — root cause depuis le comportement observé + le code
 
-**2. Constater** — erreurs console, requêtes échouées, état UI : observés en direct
+**3. Proposer** — fix ciblé, que vous validez avant qu'il l'applique
 
-**3. Diagnostiquer** — root cause depuis le comportement réel + le code source
+**4. Vérifier** — l'agent repasse dans le navigateur et confirme la résolution
 
-**4. Proposer** — un fix ciblé, que vous validez avant qu'il l'applique
-
-**5. Vérifier** — l'agent repasse sur le navigateur et confirme que le bug est résolu
-
-**6. Capitaliser** — pattern dans `docs/solutions/` pour les prochaines sessions
+**5. Capitaliser** — pattern dans `docs/solutions/` pour les prochaines sessions
 
 > L'agent n'attend pas qu'on lui décrive le bug. Il le *trouve*.
 

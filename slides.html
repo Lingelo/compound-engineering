@@ -1172,15 +1172,13 @@ a {
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="18">
 <h2 id="le-debug-version-ce">Le debug, version CE</h2>
-<p><code>/ce-debug</code> — l'agent ne lit pas juste les logs. Il joue le testeur.</p>
-<p>Via le <strong>Chrome DevTools MCP</strong>, il prend le contrôle du navigateur :<br />
-clics, formulaires, console, réseau — tout ce qu'un humain ferait pour reproduire le bug.</p>
-<p><strong>1. Naviguer</strong> — l'agent rejoue le scénario dans le vrai navigateur</p>
-<p><strong>2. Constater</strong> — erreurs console, requêtes échouées, état UI : observés en direct</p>
-<p><strong>3. Diagnostiquer</strong> — root cause depuis le comportement réel + le code source</p>
-<p><strong>4. Proposer</strong> — un fix ciblé, que vous validez avant qu'il l'applique</p>
-<p><strong>5. Vérifier</strong> — l'agent repasse sur le navigateur et confirme que le bug est résolu</p>
-<p><strong>6. Capitaliser</strong> — pattern dans <code>docs/solutions/</code> pour les prochaines sessions</p>
+<p>Via le <strong>Chrome DevTools MCP</strong>, <code>/ce-debug</code> prend le contrôle du navigateur —<br />
+l'agent rejoue le scénario et trouve le bug lui-même.</p>
+<p><strong>1. Observer</strong> — clics, console, réseau : comportement réel, pas une description</p>
+<p><strong>2. Diagnostiquer</strong> — root cause depuis le comportement observé + le code</p>
+<p><strong>3. Proposer</strong> — fix ciblé, que vous validez avant qu'il l'applique</p>
+<p><strong>4. Vérifier</strong> — l'agent repasse dans le navigateur et confirme la résolution</p>
+<p><strong>5. Capitaliser</strong> — pattern dans <code>docs/solutions/</code> pour les prochaines sessions</p>
 <blockquote>
 <p>L'agent n'attend pas qu'on lui décrive le bug. Il le <em>trouve</em>.</p>
 </blockquote>
