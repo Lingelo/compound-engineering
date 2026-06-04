@@ -180,6 +180,26 @@ Reprenons le bug de mardi. Avec le CE, ça donne :
 
 ---
 
+## Le debug, version CE
+
+Le bug de mardi — pas en panique, en méthode.
+
+**1. Reproduire** — test qui échoue, cas minimal, contexte isolé
+
+**2. Analyser** — `/ce-debug` lit les logs, le diff récent et la doc du projet
+
+**3. Planifier** — hypothèse de root cause + blueprint du fix *avant* de toucher le code
+
+**4. Corriger** — implémentation ciblée depuis le plan, sur une branche
+
+**5. Reviewer** — agents sécu et régressions, en parallèle
+
+**6. Capitaliser** — le pattern dans `docs/solutions/` : la prochaine fois, l'agent *sait déjà*
+
+> Le debug CE n'est pas plus long. Il est *réutilisable*.
+
+---
+
 ## D'un POC à un framework
 
 Il y a un an, c'était quatre commandes bricolées dans un dossier.
@@ -285,10 +305,13 @@ l'agent analyse *votre* codebase et crée des exercices personnalisés.
 ## Pour essayer
 
 ```bash
-# Compound Engineering
-claude /plugin marketplace add EveryInc/compound-engineering-plugin
-claude /plugin install compound-engineering
+# Installer le plugin
+npx @everyinc/ce-plugin install
+
+# Cycle principal
 claude /ce-plan "Ajouter l'authentification OAuth2"
+claude /ce-debug          # Analyser un bug en cours
+claude /ce-review         # Review complète de la branche
 
 # AI Tutor — apprendre depuis votre code
 claude /coding-tutor
