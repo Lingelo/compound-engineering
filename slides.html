@@ -1173,12 +1173,14 @@ a {
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="18">
 <h2 id="le-debug-version-ce">Le debug, version CE</h2>
 <p><code>/ce-debug</code> — l'agent ne lit pas juste les logs. Il joue le testeur.</p>
-<p><strong>1. Lancer l'app</strong> — l'agent exécute le projet et navigue les scénarios concernés</p>
-<p><strong>2. Constater</strong> — il observe les erreurs en conditions réelles, pas sur description</p>
-<p><strong>3. Diagnostiquer</strong> — root cause identifiée depuis le comportement observé + le code</p>
+<p>Via le <strong>MCP Chrome DevTools</strong>, il prend le contrôle du navigateur :<br />
+clics, formulaires, console, réseau — tout ce qu'un humain ferait pour reproduire le bug.</p>
+<p><strong>1. Naviguer</strong> — l'agent rejoue le scénario dans le vrai navigateur</p>
+<p><strong>2. Constater</strong> — erreurs console, requêtes échouées, état UI : observés en direct</p>
+<p><strong>3. Diagnostiquer</strong> — root cause depuis le comportement réel + le code source</p>
 <p><strong>4. Proposer</strong> — un fix ciblé, que vous validez avant qu'il l'applique</p>
-<p><strong>5. Vérifier</strong> — l'agent relance l'app et confirme que le comportement change</p>
-<p><strong>6. Capitaliser</strong> — pattern documenté dans <code>docs/solutions/</code> pour les prochaines sessions</p>
+<p><strong>5. Vérifier</strong> — l'agent repasse sur le navigateur et confirme que le bug est résolu</p>
+<p><strong>6. Capitaliser</strong> — pattern dans <code>docs/solutions/</code> pour les prochaines sessions</p>
 <blockquote>
 <p>L'agent n'attend pas qu'on lui décrive le bug. Il le <em>trouve</em>.</p>
 </blockquote>

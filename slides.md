@@ -184,17 +184,20 @@ Reprenons le bug de mardi. Avec le CE, ça donne :
 
 `/ce-debug` — l'agent ne lit pas juste les logs. Il joue le testeur.
 
-**1. Lancer l'app** — l'agent exécute le projet et navigue les scénarios concernés
+Via le **MCP Chrome DevTools**, il prend le contrôle du navigateur :
+clics, formulaires, console, réseau — tout ce qu'un humain ferait pour reproduire le bug.
 
-**2. Constater** — il observe les erreurs en conditions réelles, pas sur description
+**1. Naviguer** — l'agent rejoue le scénario dans le vrai navigateur
 
-**3. Diagnostiquer** — root cause identifiée depuis le comportement observé + le code
+**2. Constater** — erreurs console, requêtes échouées, état UI : observés en direct
+
+**3. Diagnostiquer** — root cause depuis le comportement réel + le code source
 
 **4. Proposer** — un fix ciblé, que vous validez avant qu'il l'applique
 
-**5. Vérifier** — l'agent relance l'app et confirme que le comportement change
+**5. Vérifier** — l'agent repasse sur le navigateur et confirme que le bug est résolu
 
-**6. Capitaliser** — pattern documenté dans `docs/solutions/` pour les prochaines sessions
+**6. Capitaliser** — pattern dans `docs/solutions/` pour les prochaines sessions
 
 > L'agent n'attend pas qu'on lui décrive le bug. Il le *trouve*.
 
