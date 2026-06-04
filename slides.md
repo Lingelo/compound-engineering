@@ -158,7 +158,7 @@ Pas de base de données externe. Pas de SaaS. **Des fichiers markdown dans votre
 
 L'agent les lit au démarrage. Vos collègues aussi.
 
-> Pour ce qui n'est pas encore en fichier ? `/ce-sessions` le rejoue.
+> Plus le stock de doc grandit, plus l'agent démarre loin. L'accumulation fait la valeur.
 
 ---
 
@@ -231,8 +231,8 @@ Le CE n'est pas magique. Trois limites — toujours la même cause :
   À *vous* de la tenir.
 - **L'IA ne teste pas mieux que vous** — l'agent valide en lançant votre suite
   automatisée. Tests faibles = qualité faible.
-- **Le compound prend du temps** — 3 à 6 mois avant les bénéfices cumulatifs.
-  Beaucoup d'équipes lâchent avant d'y être.
+- **La valeur s'accumule** — chaque doc rend l'agent plus utile. Le stock ne
+  grossit que si *vous* l'alimentez.
 
 > Le CE est un multiplicateur — de vos forces *et* de vos faiblesses.
 > Si vous êtes le levier, prenez soin du levier.
@@ -289,7 +289,6 @@ l'agent analyse *votre* codebase et crée des exercices personnalisés.
 claude /plugin marketplace add EveryInc/compound-engineering-plugin
 claude /plugin install compound-engineering
 claude /ce-plan "Ajouter l'authentification OAuth2"
-claude /ce-sessions     # retrouver une investigation passée
 
 # AI Tutor — apprendre depuis votre code
 claude /coding-tutor
