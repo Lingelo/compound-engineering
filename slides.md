@@ -303,16 +303,16 @@ l'agent analyse *votre* codebase et crée des exercices personnalisés.
 
 ## Pour essayer
 
+**Installation** — voir le README officiel :
+`github.com/EveryInc/compound-engineering-plugin`
+
 ```bash
 # Lancer Claude Code en mode interactif
 claude
-
-# Dans la session — installer le plugin
-/add EveryInc/compound-engineering-plugin
 ```
 
 ```bash
-# Cycle principal (depuis le terminal ou la session)
+# Cycle principal
 /ce-plan "Ajouter l'authentification OAuth2"
 /ce-debug          # Analyser un bug en cours
 /ce-review         # Review complète de la branche
