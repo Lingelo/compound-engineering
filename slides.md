@@ -305,16 +305,19 @@ l'agent analyse *votre* codebase et crée des exercices personnalisés.
 ## Pour essayer
 
 ```bash
-# Installer le plugin
-npx @everyinc/ce-plugin install
+# Lancer Claude Code en mode interactif
+claude
 
-# Cycle principal
-claude /ce-plan "Ajouter l'authentification OAuth2"
-claude /ce-debug          # Analyser un bug en cours
-claude /ce-review         # Review complète de la branche
+# Dans la session — installer le plugin
+/add EveryInc/compound-engineering-plugin
+```
 
-# AI Tutor — apprendre depuis votre code
-claude /coding-tutor
+```bash
+# Cycle principal (depuis le terminal ou la session)
+/ce-plan "Ajouter l'authentification OAuth2"
+/ce-debug          # Analyser un bug en cours
+/ce-review         # Review complète de la branche
+/coding-tutor      # AI Tutor depuis votre code
 ```
 
 ---

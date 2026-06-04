@@ -2424,16 +2424,17 @@ a {
 }
 ;color:#e8e6dc;background-color:#141413;background-image:none;" data-marpit-pagination-total="18">
 <h2 id="pour-essayer">Pour essayer</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Installer le plugin</span>
-npx @everyinc/ce-plugin install
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Lancer Claude Code en mode interactif</span>
+claude
 
-<span class="hljs-comment"># Cycle principal</span>
-claude /ce-plan <span class="hljs-string">&quot;Ajouter l&#x27;authentification OAuth2&quot;</span>
-claude /ce-debug          <span class="hljs-comment"># Analyser un bug en cours</span>
-claude /ce-review         <span class="hljs-comment"># Review complète de la branche</span>
-
-<span class="hljs-comment"># AI Tutor — apprendre depuis votre code</span>
-claude /coding-tutor
+<span class="hljs-comment"># Dans la session — installer le plugin</span>
+/add EveryInc/compound-engineering-plugin
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Cycle principal (depuis le terminal ou la session)</span>
+/ce-plan <span class="hljs-string">&quot;Ajouter l&#x27;authentification OAuth2&quot;</span>
+/ce-debug          <span class="hljs-comment"># Analyser un bug en cours</span>
+/ce-review         <span class="hljs-comment"># Review complète de la branche</span>
+/coding-tutor      <span class="hljs-comment"># AI Tutor depuis votre code</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-background-color="#141413" data-color="#e8e6dc" data-theme="default" data-style="section {
