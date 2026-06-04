@@ -182,21 +182,21 @@ Reprenons le bug de mardi. Avec le CE, ça donne :
 
 ## Le debug, version CE
 
-Le bug de mardi — pas en panique, en méthode.
+`/ce-debug` — l'agent ne lit pas juste les logs. Il joue le testeur.
 
-**1. Reproduire** — test qui échoue, cas minimal, contexte isolé
+**1. Lancer l'app** — l'agent exécute le projet et navigue les scénarios concernés
 
-**2. Analyser** — `/ce-debug` lit les logs, le diff récent et la doc du projet
+**2. Constater** — il observe les erreurs en conditions réelles, pas sur description
 
-**3. Planifier** — hypothèse de root cause + blueprint du fix *avant* de toucher le code
+**3. Diagnostiquer** — root cause identifiée depuis le comportement observé + le code
 
-**4. Corriger** — implémentation ciblée depuis le plan, sur une branche
+**4. Proposer** — un fix ciblé, que vous validez avant qu'il l'applique
 
-**5. Reviewer** — agents sécu et régressions, en parallèle
+**5. Vérifier** — l'agent relance l'app et confirme que le comportement change
 
-**6. Capitaliser** — le pattern dans `docs/solutions/` : la prochaine fois, l'agent *sait déjà*
+**6. Capitaliser** — pattern documenté dans `docs/solutions/` pour les prochaines sessions
 
-> Le debug CE n'est pas plus long. Il est *réutilisable*.
+> L'agent n'attend pas qu'on lui décrive le bug. Il le *trouve*.
 
 ---
 
