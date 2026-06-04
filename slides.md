@@ -180,6 +180,25 @@ Reprenons le bug de mardi. Avec le CE, ça donne :
 
 ---
 
+## Le debug, version CE
+
+Via le **Chrome DevTools MCP**, `/ce-debug` prend le contrôle du navigateur —
+l'agent rejoue le scénario et trouve le bug lui-même.
+
+**1. Observer** — clics, console, réseau : comportement réel, pas une description
+
+**2. Diagnostiquer** — root cause depuis le comportement observé + le code
+
+**3. Proposer** — fix ciblé, que vous validez avant qu'il l'applique
+
+**4. Vérifier** — l'agent repasse dans le navigateur et confirme la résolution
+
+**5. Capitaliser** — pattern dans `docs/solutions/` pour les prochaines sessions
+
+> L'agent n'attend pas qu'on lui décrive le bug. Il le *trouve*.
+
+---
+
 ## D'un POC à un framework
 
 Il y a un an, c'était quatre commandes bricolées dans un dossier.
@@ -284,14 +303,20 @@ l'agent analyse *votre* codebase et crée des exercices personnalisés.
 
 ## Pour essayer
 
-```bash
-# Compound Engineering
-claude /plugin marketplace add EveryInc/compound-engineering-plugin
-claude /plugin install compound-engineering
-claude /ce-plan "Ajouter l'authentification OAuth2"
+**Installation** — voir le README officiel :
+`github.com/EveryInc/compound-engineering-plugin`
 
-# AI Tutor — apprendre depuis votre code
-claude /coding-tutor
+```bash
+# Lancer Claude Code en mode interactif
+claude
+```
+
+```bash
+# Cycle principal
+/ce-plan "Ajouter l'authentification OAuth2"
+/ce-debug          # Analyser un bug en cours
+/ce-review         # Review complète de la branche
+/coding-tutor      # AI Tutor depuis votre code
 ```
 
 ---
