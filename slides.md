@@ -147,11 +147,12 @@ L'agent de demain commence là où celui d'aujourd'hui a fini.
 ```
 votre-projet/
 ├── CLAUDE.md        # Ce que l'agent doit savoir
-├── docs/
-│   ├── brainstorms/ # Idéation structurée
-│   ├── solutions/   # Patterns extraits des bugs résolus
-│   └── plans/       # Blueprints d'implémentation
-└── todos/           # Tâches issues des reviews
+├── CONCEPTS.md      # Vocabulaire durable du projet
+├── STRATEGY.md      # Cap produit / roadmap
+└── docs/
+    ├── brainstorms/ # Idéation structurée
+    ├── plans/       # Blueprints d'implémentation
+    └── solutions/   # Patterns extraits des bugs résolus
 ```
 
 Pas de base de données externe. Pas de SaaS. **Des fichiers markdown dans votre repo.**
@@ -205,8 +206,8 @@ Il y a un an, c'était quatre commandes bricolées dans un dossier.
 
 | | |
 |---|---|
-| **27 skills** | du brainstorm au merge, invocables en slash commands |
-| **Tout en skills** | elles ont remplacé l'ancien duo agents + commandes |
+| **27 skills** | = 27 slash commands, du brainstorm au merge |
+| **Composables** | chaînées en pipelines (ex. `/lfg` : du plan à la PR) |
 | **v3.14.3** | 183 releases, licence MIT |
 | **22k stars** | 1.6k forks, communauté active |
 
@@ -214,6 +215,20 @@ Pas un POC. Un framework, maintenu, qui s'élargit chaque semaine.
 
 > La question n'est plus *« est-ce que ça vaut le coup ? »*
 > mais *« qu'est-ce que j'attends pour m'y mettre ? »*
+
+---
+
+## La palette de commandes
+
+| Phase | Commandes |
+|-------|-----------|
+| **Cadrer** | `/ce-strategy` · `/ce-brainstorm` · `/ce-ideate` |
+| **Construire** | `/ce-plan` · `/ce-work` · `/ce-debug` |
+| **Vérifier** | `/ce-code-review` · `/ce-simplify-code` · `/ce-resolve-pr-feedback` |
+| **Capitaliser** | `/ce-compound` · `/ce-compound-refresh` |
+| **Automatiser** | `/lfg` (plan → PR verte) · `/ce-worktree` |
+
+> 27 skills composables. Vous orchestrez, l'agent exécute.
 
 ---
 
@@ -288,13 +303,11 @@ Le groupe C apprend *avec* l'IA — et devient autonome.
 
 ## Garder la main
 
-Deux réflexes pour rester dans le groupe C :
+Trois leviers pour rester dans le groupe C :
 
 - **Coder sans IA régulièrement** — katas, pet projects, debugging manuel. Le muscle qui ne travaille pas s'atrophie
-- **Configurer votre `CLAUDE.md` en mode socratique** — l'agent donne des indices, pas des réponses. Vous restez aux commandes *même quand vous utilisez l'IA*
-
-Pas besoin d'outil dédié : c'est *votre* `CLAUDE.md` qui transforme l'agent
-en **tuteur** plutôt qu'en exécutant. Indices, contre-questions, alternatives chiffrées.
+- **Le mode `Learning`** (`/config` → Output style) — Claude explique puis vous laisse coder les morceaux clés via des `TODO(human)`. Le mode tuteur *natif* de Claude Code
+- **Un `CLAUDE.md` socratique** — indices et contre-questions plutôt que la solution. Vous restez aux commandes *même quand vous utilisez l'IA*
 
 > Au lieu de déléguer ce que vous ne comprenez pas, vous l'**apprenez**.
 
