@@ -205,10 +205,10 @@ Il y a un an, c'était quatre commandes bricolées dans un dossier.
 
 | | |
 |---|---|
-| **37 skills** | du brainstorm au merge |
-| **51 agents** | spécialisés et composables |
-| **v3.9.4** | 163 releases en 18 mois |
-| **19k stars** | open source, communauté active |
+| **27 skills** | du brainstorm au merge, invocables en slash commands |
+| **Tout en skills** | elles ont remplacé l'ancien duo agents + commandes |
+| **v3.14.3** | 183 releases, licence MIT |
+| **22k stars** | 1.6k forks, communauté active |
 
 Pas un POC. Un framework, maintenu, qui s'élargit chaque semaine.
 
@@ -293,11 +293,10 @@ Deux réflexes pour rester dans le groupe C :
 - **Coder sans IA régulièrement** — katas, pet projects, debugging manuel. Le muscle qui ne travaille pas s'atrophie
 - **Configurer votre `CLAUDE.md` en mode socratique** — l'agent donne des indices, pas des réponses. Vous restez aux commandes *même quand vous utilisez l'IA*
 
-**Le mode tuteur** (`/coding-tutor`) pousse cette logique plus loin :
-l'agent analyse *votre* codebase et crée des exercices personnalisés.
+Pas besoin d'outil dédié : c'est *votre* `CLAUDE.md` qui transforme l'agent
+en **tuteur** plutôt qu'en exécutant. Indices, contre-questions, alternatives chiffrées.
 
 > Au lieu de déléguer ce que vous ne comprenez pas, vous l'**apprenez**.
-> — Plugin CE : github.com/EveryInc/compound-engineering-plugin
 
 ---
 
@@ -315,8 +314,8 @@ claude
 # Cycle principal
 /ce-plan "Ajouter l'authentification OAuth2"
 /ce-debug          # Analyser un bug en cours
-/ce-review         # Review complète de la branche
-/coding-tutor      # AI Tutor depuis votre code
+/ce-code-review    # Review complète de la branche
+/ce-compound       # Capitaliser le pattern appris
 ```
 
 ---
@@ -332,7 +331,7 @@ claude
 - **Guide définitif :** every.to/source-code/compound-engineering-the-definitive-guide
 - **Guide pratique :** every.to/guides/compound-engineering
 - **Analyse Larson :** lethain.com/everyinc-compound-engineering
-- **Plugin (v3.9.4) :** github.com/EveryInc/compound-engineering-plugin *(+ /releases)*
+- **Plugin (v3.14.3) :** github.com/EveryInc/compound-engineering-plugin *(+ /releases)*
 - **SDD :** martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html
 - **Atrophie cognitive :** Micode — *Comment ChatGPT détruit votre cerveau* (YouTube)
 
